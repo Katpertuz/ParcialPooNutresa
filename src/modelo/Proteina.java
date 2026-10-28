@@ -5,7 +5,7 @@ public class Proteina extends Ingrediente {
 
     public Proteina(String codigo, String nombre, int gramos, double precioKilo,
                     boolean fresco, String tipo) {
-        super(codigo, nombre, gramos, precioKilo);
+        super(codigo, nombre, 20, 20.9,true);
         this.tipo = tipo;
     }
 
