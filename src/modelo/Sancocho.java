@@ -48,7 +48,7 @@ public class Sancocho implements Identificable, Costeable {
 
     /** Es trifásico si lleva 3 o más proteínas (por ejemplo gallina, res y cerdo). */
     public boolean esTrifasico() {
-        return olla.getCantidadIngredientes() >= 3;
+        return olla.contarPorCategoria("Proteína") >= 3;
     }
 
     /** Descuenta los platos si alcanzan las porciones. Si no alcanzan, no descuenta nada. */
