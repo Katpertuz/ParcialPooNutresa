@@ -22,7 +22,7 @@ public abstract class Ingrediente implements Identificable, Costeable {
     public String getCodigo() { return codigo; }
     public String getNombre() { return nombre; }
     public int getGramos() { return gramos; }
-    public int getPrecioKilo() { return precioKilo; }
+    public double getPrecioKilo() { return precioKilo; }
     public boolean isFresco() { return fresco; }
 
     public void setNombre(String nombre) {
