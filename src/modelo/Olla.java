@@ -33,7 +33,7 @@ public class Olla {
                     + ": el código " + nuevo.getCodigo() + " ya está en la olla.");
             return false;
         }
-        if (calcularPesoTotal() > capacidadGramos) {
+        if (calcularPesoTotal() + nuevo.getGramos() > capacidadGramos) {
             System.out.println("No se agregó " + nuevo.getNombre() + ": no cabe en la olla.");
             return false;
         }
