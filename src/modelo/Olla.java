@@ -44,7 +44,7 @@ public class Olla {
     /** Retorna el ingrediente con ese código o null si no está en la olla. */
     public Ingrediente buscarPorCodigo(String codigo) {
         for (Ingrediente i : ingredientes) {
-            if (i.getNombre().equals(codigo)) {
+            if (i.getCodigo().equals(codigo)) {
                 return i;
             }
         }
