@@ -48,6 +48,7 @@ public class Olla {
                 return i;
             }
         }
+        return null;
     }
 
     public int calcularPesoTotal() {
