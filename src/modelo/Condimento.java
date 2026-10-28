@@ -14,7 +14,7 @@ public class Condimento extends Ingrediente {
     /** Las hierbas que se echan al final (cilantro, guascas) necesitan 5 minutos; las demás, 20. */
     @Override
     public int minutosCoccion() {
-        int minutos;
+        int minutos=5;
         if (seAgregaAlFinal) {
             minutos = 5;
         } else if (!seAgregaAlFinal) {
