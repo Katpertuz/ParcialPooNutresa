@@ -52,7 +52,7 @@ public class Sancocho implements Identificable, Costeable {
     }
 
     /** Descuenta los platos si alcanzan las porciones. Si no alcanzan, no descuenta nada. */
-    public void servir(int cantidad) {
+    public boolean servir(int cantidad) {
         if (cantidad <= 0 || cantidad > porcionesDisponibles) {
             return false;
         }
