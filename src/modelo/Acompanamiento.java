@@ -20,6 +20,6 @@ public class Acompanamiento implements Costeable {
     @Override
     public double calcularCosto() {
         
-        throw new UnsupportedOperationException("Unimplemented method 'calcularCosto'");
+        return getPrecio();
     }
 }
