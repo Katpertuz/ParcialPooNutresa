@@ -19,6 +19,6 @@ public class Tuberculo extends Ingrediente {
 
     @Override
     public String getCategoria() {
-        return 'Tubérculo';
+        return "Tubérculo";
     }
 }
