@@ -34,6 +34,15 @@
 (las 25 filas)
 
 ## 2. Errores de lógica corregidos
-| # | Archivo y método | Qué hacía mal | Pista (fila de la tabla) | Cómo lo corregí |
-|---|------------------|---------------|--------------------------|-----------------|
-(las 10 filas)
+| # | Archivo | Método / Fragmento | Regla de negocio / Comportamiento incorrecto | Corrección realizada |
+|---|---------|--------------------|----------------------------------------------|----------------------|
+| 1 | `Acompanamiento.java` | `calcularCosto()` | Lanzaba una excepción `UnsupportedOperationException`, provocando el colapso (*crash*) de la aplicación al calcular precios. | Se reemplazó la excepción devolviendo el precio individual del acompañamiento (`return getPrecio();`). |
+| 2 | `Olla.java` | `buscarPorCodigo()` | Comparaba el código buscado contra el nombre del ingrediente (`getNombre()`), impidiendo encontrar ingredientes y permitiendo códigos duplicados. | Se corrigió la comparación para evaluar el atributo de código único: `i.getCodigo().equals(codigo)`. |
+| 3 | `Olla.java` | `agregarIngrediente()` | Evaluaba únicamente el peso actual de la olla sin sumar el peso del nuevo ingrediente, permitiendo superar la capacidad máxima permitida. | Se cambió la validación a `calcularPesoTotal() + nuevo.getGramos() > capacidadGramos`. |
+| 4 | `Olla.java` | `calcularTiempoCoccion()` | Evaluaba con el operador `< mayor`, por lo que nunca encontraba el tiempo máximo y el sancocho siempre reportaba `0 min` de cocción. | Se cambió el operador de comparación a `> mayor` para obtener el ingrediente con el tiempo de cocción más alto. |
+| 5 | `Olla.java` | `calcularCostoIngredientes()` | El bucle iniciaba en `int i = 1`, omitiendo el costo del primer ingrediente de la lista en la suma total. | Se corrigió el índice inicial del bucle a `int i = 0` para incluir la totalidad de los ingredientes. |
+| 6 | `Ingrediente.java` | `calcularCosto()` | La división entera `(gramos / 1000)` truncaba a `0` el costo de cualquier ingrediente con menos de 1000 gramos. | Se forzó la división en punto flotante utilizando `1000.0`: `(gramos / 1000.0) * precioKilo`. |
+| 7 | `Sancocho.java` | `estaCompleto()` | La condición final usaba el operador `||` en lugar de `&&`, marcando sancochos completos sin importar si carecían de proteína. | Se cambiaron todos los conectivos lógicos a `&&` para exigir obligatoriamente Proteína, Tubérculo y Condimento. |
+| 8 | `Sancocho.java` | `esTrifasico()` | Contaba el total global de ingredientes de la olla (`>= 3`) en lugar de contar únicamente los ingredientes de la categoría de proteínas. | Se cambió la evaluación para contar específicamente por categoría: `olla.contarPorCategoria("Proteína") >= 3`. |
+| 9 | `Fonda.java` | `registrarPedido()` | Agregaba el pedido a la lista de ventas del día antes de verificar si el sancocho contaba con porciones suficientes para servirlo. | Se condicionó la adición a la lista `pedidos.add(pedido)` únicamente si `sancocho.servir(cantidad)` retorna `true`. |
+| 10 | `Pedido.java` | `calcularCosto()` | Multiplicaba por la cantidad de platos únicamente el precio del sancocho, sumando los acompañamientos una sola vez en lugar de por cada plato. | Se ajustó la fórmula a `(sancocho.calcularPrecioPorcion() + sumaAcompanamientos) * cantidad`. |
