@@ -20,7 +20,7 @@ public class Main {
         Proteina gallina = new Proteina("PRO-001", "Gallina criolla", 1500, 18000, true, "gallina");
         //                              código     nombre          gramos  $/kg  fresco  duro
         Tuberculos papa = new Tuberculos("TUB-001", "Papa pastusa", 1000, 3000, true, false);
-        Tuberculos yuca = new Ingrediente("TUB-002", "Yuca", 800, 3500, true, true);
+        Tuberculos yuca = new Tuberculos("TUB-002", "Yuca", 800, 3500, true, true);
         //                            código     nombre           gramos  $/kg  fresco
         Verdura mazorca = new Verdura("VER-001", "Mazorca", 600, 4000, true);
         Verdura platano = new Verdura("VER-002", "Plátano verde", 500, 4000, true);
@@ -53,7 +53,7 @@ public class Main {
 
         System.out.println("\n=== 3. Olla pequeña (caldo de papa) ===");
         Olla ollaPequena = new Olla(1000);
-        ollaPequena.agregarIngrediente(new Tuberculo("TUB-201", "Papa criolla", 800, 6000, true, false));
+        ollaPequena.agregarIngrediente(new Tuberculos("TUB-201", "Papa criolla", 800, 6000, true, false));
         ollaPequena.agregarIngrediente(new Condimento("CON-201", "Ajo", 30, 20000, true, false));
         Tuberculos yucaExtra = new Tuberculos("TUB-202", "Yuca", 300, 3500, true, true);
         System.out.println("¿Cupo la yuca en la olla pequeña? " + ollaPequena.agregarIngrediente(yucaExtra));
