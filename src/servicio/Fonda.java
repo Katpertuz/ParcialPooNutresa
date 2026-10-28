@@ -63,7 +63,7 @@ public class Fonda {
     }
 
     public void mostrarMenu() {
-        system.out.println("Menú de " + nombre + ":");
+        System.out.println("Menú de " + nombre + ":");
         for (Sancocho s : menu) {
             System.out.println("  - " + s.obtenerFicha());
         }
