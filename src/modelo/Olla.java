@@ -72,7 +72,7 @@ public class Olla {
     public int calcularTiempoCoccion() {
         int mayor = 0;
         for (Ingrediente i : ingredientes) {
-            if (i.minutosCoccion() < mayor) {
+            if (i.minutosCoccion() > mayor) {
                 mayor = i.minutosCoccion();
             }
         }
