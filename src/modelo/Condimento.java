@@ -6,7 +6,7 @@ public class Condimento extends Ingrediente {
     public Condimento(String codigo, String nombre, int gramos, double precioKilo,
                       boolean fresco, boolean seAgregaAlFinal) {
         super(codigo, nombre, gramos, precioKilo, fresco);
-        this.seAgregaAlFinal = alFinal;
+        this.seAgregaAlFinal = seAgregaAlFinal;
     }
 
     public boolean isSeAgregaAlFinal() { return seAgregaAlFinal; }
