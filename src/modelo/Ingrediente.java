@@ -34,7 +34,7 @@ public abstract class Ingrediente implements Identificable, Costeable {
 
     public void setGramos(int gramos) {
         if (gramos <= 0) {
-            throw IllegalArgumentException("Los gramos deben ser mayores que 0");
+            throw new IllegalArgumentException("Los gramos deben ser mayores que 0");
         }
         this.gramos = gramos;
     }
