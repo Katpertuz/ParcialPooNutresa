@@ -64,7 +64,8 @@ public abstract class Ingrediente implements Identificable, Costeable {
 
     @Override
     public String obtenerFicha() {
-        return getCategoria() + " [" + codigo + "] " + nombre + " - " + gramos + " g, $
-                + String.format("%.0f", calcularCosto()) + ", " + minutosCoccion() + " min";
+        return getCategoria() + " [" + codigo + "] " + nombre + " - " + gramos + " g, $"
+                + String.format("%.0f", calcularCosto()) + ", " + minutosCoccion() + " min"; 
     }
 }
+
